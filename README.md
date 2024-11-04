@@ -1,2 +1,1 @@
-# izk-bot
-Telegram bot for update about finance index
+# Izk-bot for Telegram
