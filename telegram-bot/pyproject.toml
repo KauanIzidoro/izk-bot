@@ -7,6 +7,26 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
+ruff = "^0.7.2"
+taskipy = "^1.14.0"
+python-telegram-bot = "^21.6"
+
+[tool.ruff]
+line-length = 79
+extend-exclude = ['migrations', '_pycache_']
+
+[tool.ruff.lint]
+preview = true
+select = ['I', 'F', 'E', 'W', 'PL', 'PT', 'B']
+
+[tool.ruff.format]
+preview = true
+quote-style = 'single'
+
+[tool.taskipy.tasks]
+lint = 'ruff check . && ruff . --diff'
+format = 'ruff check . --fix && ruff format'
+run = 'python3 main.py'
 
 
 [build-system]
